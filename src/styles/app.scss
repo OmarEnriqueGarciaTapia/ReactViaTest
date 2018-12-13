@@ -1,0 +1,211 @@
+@import './variables.scss';
+
+/*Fuentes*/
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype"),
+    url("../fonts/Roboto-Regular.woff") format("woff"),
+    url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-style: "normal";
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype"),
+    url("../fonts/Roboto-Bold.woff") format("woff"),
+    url("../fonts/Roboto-Bold.woff2") format("woff2");
+  font-style: "normal";
+  font-weight: 700;
+}
+/*Fuentes*/
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 2em;
+  background-color: beige;
+  font-family: "Roboto Regular";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fix-height {
+  clear: both;
+  color: transparent;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.hide{
+  display: none;
+}
+
+.App {
+  text-align: center;
+}
+
+.header {
+  height:3em;
+  background-color: $primary-color;
+  padding-bottom: 1em;
+  .logo {
+    float: left;
+    img {
+      animation: App-logo-spin infinite 20s linear;
+      height: 40vmin;
+      max-width: 4em;
+      max-height: 4em;
+    }
+    @media screen and (max-width: $break-small) {
+      float: left;
+      width: 100%;
+    }
+  }
+  .icons {
+    float: right;
+    i {
+      padding: 0.75em;
+      padding-right: 1em;
+      padding-left: 0;
+      font-size: 1.5em;
+      color: white;
+      text-align: right;
+      cursor: pointer;
+      span{
+        position: relative;
+        right: 10px;
+        top: -15px;
+        color: #fff;
+        background-color: red;
+        width: auto;
+        border-radius: 2em;
+        font-size: 0.6em;
+        padding: 0.3em;
+      }
+      @media screen and (max-width: $break-small) {
+        padding-right: 0;
+        text-align: center;
+        width: 33%;
+      }
+    }
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+    }
+  }
+  .search-bar {
+    margin: 0.8em 0 0 0;
+    padding-right: 2.5em;
+    padding-left: 0;
+    float: right;
+    input {
+      border: 1px solid var(--color-blue);
+      border: 0;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      padding: 1em;
+      width: $search-bar-input;
+      -webkit-transition: width 1s;
+      transition: width 1s;
+    }
+    button {
+      background: $secondary-color;
+      color: white;
+      border: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding: 1em;
+      cursor: pointer;
+    }
+    &-active{
+      width: ($search-bar-input * 2) !important;
+    }
+    ul {
+      width: 100%;
+      max-width: ( $search-bar-input * 2 );
+      background: white;
+      border: 0px solid grey;
+      padding: 0;
+      margin: 0;
+      margin-top: -1px;
+      list-style:none;
+      li {
+        border: 1px solid grey;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          background-color: burlywood;
+        }
+      }
+    }
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+      padding: 0;
+      float: right;
+    }
+  }
+  @media screen and (max-width: $break-small) {
+    height: auto;
+  }
+}
+
+.home, .e404, .search, .job {
+  margin-top: 1em;
+  .title{
+    font-size: 3em;
+    float: left;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+.search {
+  ul{
+    float: left;
+    clear: both;
+    border: 0px solid grey;
+    padding: 0;
+    margin: 0;
+    margin-top: -1px;
+    list-style:none;
+    li {
+      width: 100%;
+      padding: 0;
+      padding-left: 3em;
+      text-align: left;
+      cursor: pointer;
+      &:hover {
+        background-color: burlywood;
+      }
+      }
+  }
+}
+
+.job{
+  div{
+    float: left;
+    width: 100%;
+    padding: 3em;
+    span{
+      float: left;
+      clear: both;
+    }
+  }
+}
+
+
+
+/* Animations */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
