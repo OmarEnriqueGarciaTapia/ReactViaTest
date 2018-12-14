@@ -18,11 +18,12 @@ class Search extends Component {
     const jobSearchKey = commons.getJobName( pathname )
 
     const jobs = this.props.jobs;
-    const nJobs = jobs.length > 40 ? jobs.slice(0, 40) : jobs;
+    const nJobs = jobs.length > 40 ? jobs.slice(0, 39) : jobs;
 
     /* Maps */
     const jobRows = _.map(nJobs, function(job, i) {
-      return <li key={i} onClick={(e) => self.handlerOnClickLi(e, { name: job.suggestion, uuid:job.uuid })} > {job.suggestion} </li>;
+
+      return <li key={i} title={ job.suggestion } onClick={(e) => self.handlerOnClickLi(e, { name: job.suggestion, uuid:job.uuid })} > { job.suggestion.length >= 32 ? job.suggestion.slice(0,31) + "..." : job.suggestion} </li>;
     });
 
 

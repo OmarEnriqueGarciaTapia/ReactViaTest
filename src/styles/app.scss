@@ -23,7 +23,6 @@
 body {
   margin: 0;
   padding: 0;
-  padding-bottom: 2em;
   background-color: beige;
   font-family: "Roboto Regular";
   -webkit-font-smoothing: antialiased;
@@ -121,6 +120,9 @@ body {
     }
     &-active{
       width: ($search-bar-input * 2) !important;
+      @media screen and (max-width: $break-small) {
+        width: ($search-bar-input * 3) !important;
+      }
     }
     ul {
       width: 100%;
@@ -131,6 +133,7 @@ body {
       margin: 0;
       margin-top: -1px;
       list-style:none;
+      margin: 0 auto;
       li {
         border: 1px solid grey;
         width: 100%;
@@ -156,11 +159,12 @@ body {
 .home, .e404, .search, .job {
   margin-top: 1em;
   .title{
-    font-size: 3em;
+    font-size: 2em;
     float: left;
     padding-left: 1em;
     padding-right: 1em;
   }
+  padding-bottom: 10em;
 }
 
 .search {
@@ -172,10 +176,18 @@ body {
     margin: 0;
     margin-top: -1px;
     list-style:none;
+    @media screen and (max-width: $break-small){
+      width: 100%;
+    }
     li {
       width: 100%;
       padding: 0;
       padding-left: 3em;
+      @media screen and (max-width: $break-small){
+        width:80%;
+        padding: 0;
+        margin: 0 auto;
+      }
       text-align: left;
       cursor: pointer;
       &:hover {
@@ -187,11 +199,12 @@ body {
 
 .job{
   div{
-    float: left;
-    width: 100%;
-    padding: 3em;
+    width: 80%;
+    margin: 0 10%;
     span{
       float: left;
+      text-align: left;
+      font-size: 0.75em;
       clear: both;
     }
   }
