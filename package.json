@@ -6,7 +6,6 @@
     "node": "10.x",
     "npm": "6.x"
   },
-
   "private": true,
   "dependencies": {
     "react": "^16.6.3",
@@ -17,7 +16,7 @@
     "react-router": "^3.0.2",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
